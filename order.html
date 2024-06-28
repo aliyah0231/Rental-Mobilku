@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pemesanan Mobil - RentalMobilKu</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+<nav class="navbar">
+    <a href="index.html" class="navbar-logo">RentalMobilku</a>
+    <div class="navbar-nav">
+        <a href="index.html#home">HOME</a>
+        <a href="index.html#about">ABOUT</a>
+        <a href="index.html#product">PRODUCT</a>
+        <a href="index.html#contact">CONTACT</a>
+        <a href="#" id="signInBtn">SIGN IN</a>
+    </div>
+    <div class="navbar-extra">
+        <a href="#" id="Menu"><i data-feather="menu"></i></a>
+    </div>
+</nav>
+
+<section class="section-form">
+    <div class="container-form">
+
+        <form id="consultation-form" class="feed-form" action="#">
+            <input required="" placeholder="Name" type="text">
+            <input  type="number" name="phone" required="" placeholder="Phone number">
+            <input name="email" required="" placeholder="E-mail" type="email">
+            <select id="car" name="car" required>
+                <option value="TOYOTA RAV4">TOYOTA RAV4</option>
+                <option value="TOYOTA AVANZA VELOZ">TOYOTA AVANZA VELOZ</option>
+                <option value="DAIHATSU ACTIVA">DAIHATSU ACTIVA</option>
+                <option value="INNOVA">INNOVA</option>
+                <option value="GRAND NEW AVANZA">GRAND NEW AVANZA</option>
+                <option value="AVANZA">AVANZA</option>
+                <option value="PAJERO SPORT">PAJERO SPORT</option>
+                <option value="TOYOTA AGYA">TOYOTA AGYA</option>
+                <option value="TOYOTA SIENTA">TOYOTA SIENTA</option>
+                <option value="TOYOTA CALYA">TOYOTA CALYA</option>
+            </select>
+            <input type="number" required="" placeholder="Rental Duration" min="1">
+            <input type="date" required="" placeholder="Pickup Date">
+            <button id="orderButton" class="button_submit">ORDER</button>
+        </form>
+
+    </div>
+</section>
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>company</h4>
+                <ul>
+                    <li><a href="index.html#about">about us</a></li>
+                    <li><a href="#">our services</a></li>
+                    <li><a href="#">privacy policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>get help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">shipping</a></li>
+                    <li><a href="#">returns</a></li>
+                    <li><a href="#">order status</a></li>
+                    <li><a href="#">payment options</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="#">Toyota</a></li>
+                    <li><a href="#">Honda</a></li>
+                    <li><a href="#">Avanza</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>follow us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="scribNavBar.js"></script>
+<script>
+    feather.replace();
+
+    document.getElementById('Menu').addEventListener('click', function() {
+        document.querySelector('.navbar-nav').classList.toggle('show');
+    });
+    document.getElementById('consultation-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var car = document.getElementById('car').value;
+        var duration = document.getElementById('consultation-form').elements[4].value;
+        alert("TERIMA KASIH TELAH MEMESAN " + car + " UNTUK " + duration + " KAMI AKAN SEGERA MENGHUBUNGI ANDA!");
+        window.location.href = 'index.html';
+    });
+</script>
+</body>
+</html>
